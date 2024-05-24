@@ -1,11 +1,11 @@
-import { NewArticle, UpdateArticle } from "../types/articles";
+import { Article, NewArticle, UpdateArticle } from "../types/articles";
 import { instance } from "./instance";
 
-const getArticles = () => {
+const getArticles = (): Promise<Article[]> => {
   return instance.get("/articles");
 };
 
-const getArticlesWithFeed = () => {
+const getArticlesWithFeed = (): Promise<Article[]> => {
   return instance.get("/articles/feed");
 };
 
@@ -13,7 +13,7 @@ const createArticle = (newArticle: NewArticle) => {
   return instance.post("/articles", newArticle);
 };
 
-const getArticle = (slug: string) => {
+const getArticle = (slug: string): Promise<Article> => {
   return instance.get(`/articles/${slug}`);
 };
 
