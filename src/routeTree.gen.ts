@@ -15,7 +15,6 @@ import { Route as IndexImport } from './routes/index'
 import { Route as SettingIndexImport } from './routes/setting.index'
 import { Route as ProfileIndexImport } from './routes/profile.index'
 import { Route as LoginIndexImport } from './routes/login.index'
-import { Route as HomeIndexImport } from './routes/home.index'
 import { Route as EditorIndexImport } from './routes/editor.index'
 import { Route as ArticleSlugImport } from './routes/article.$slug'
 
@@ -38,11 +37,6 @@ const ProfileIndexRoute = ProfileIndexImport.update({
 
 const LoginIndexRoute = LoginIndexImport.update({
   path: '/login/',
-  getParentRoute: () => rootRoute,
-} as any)
-
-const HomeIndexRoute = HomeIndexImport.update({
-  path: '/home/',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -81,13 +75,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof EditorIndexImport
       parentRoute: typeof rootRoute
     }
-    '/home/': {
-      id: '/home/'
-      path: '/home'
-      fullPath: '/home'
-      preLoaderRoute: typeof HomeIndexImport
-      parentRoute: typeof rootRoute
-    }
     '/login/': {
       id: '/login/'
       path: '/login'
@@ -118,7 +105,6 @@ export const routeTree = rootRoute.addChildren({
   IndexRoute,
   ArticleSlugRoute,
   EditorIndexRoute,
-  HomeIndexRoute,
   LoginIndexRoute,
   ProfileIndexRoute,
   SettingIndexRoute,
@@ -135,7 +121,6 @@ export const routeTree = rootRoute.addChildren({
         "/",
         "/article/$slug",
         "/editor/",
-        "/home/",
         "/login/",
         "/profile/",
         "/setting/"
@@ -149,9 +134,6 @@ export const routeTree = rootRoute.addChildren({
     },
     "/editor/": {
       "filePath": "editor.index.tsx"
-    },
-    "/home/": {
-      "filePath": "home.index.tsx"
     },
     "/login/": {
       "filePath": "login.index.tsx"

@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export const instance = axios.create({
-  baseURL: import.meta.env.BASE_URL,
+  baseURL: import.meta.env.VITE_APP_API_URL,
   headers: {
     "Content-Type": "application/json;charset=UTF-8",
   },
