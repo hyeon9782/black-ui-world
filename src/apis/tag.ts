@@ -1,6 +1,6 @@
 import { instance } from "./instance";
 
-const getTags = (): Promise<string[]> => {
+const getTags = () => {
   return instance.get(`/tags`);
 };
 
