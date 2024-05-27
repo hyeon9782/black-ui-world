@@ -1,5 +1,5 @@
 export type Profile = {
-  usernmae: string;
+  username: string;
   bio: string;
   image: string;
   following: boolean;

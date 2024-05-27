@@ -1,12 +1,18 @@
 import { Card, Tag } from "@black-ui/react";
 import { Article } from "../../types/articles";
+import UserBox from "../user/UserBox";
 type Props = {
   article: Article;
 };
 const ArticlePreview = ({ article }: Props) => {
   return (
     <Card>
-      <div></div>
+      <div>
+        <UserBox profile={article.author} createdAt={article.createdAt} />
+        <div>
+          <button></button>
+        </div>
+      </div>
       <div
         style={{
           fontWeight: "bold",

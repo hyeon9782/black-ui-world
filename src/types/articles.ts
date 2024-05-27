@@ -6,8 +6,8 @@ export type Article = {
   description: string;
   body: string;
   tagList: string[];
-  createAt: string;
-  updateAt: string;
+  createdAt: string;
+  updatedAt: string;
   favorited: boolean;
   favoritesCount: number;
   author: Profile;
