@@ -5,5 +5,10 @@ export const Route = createFileRoute("/editor/")({
 });
 
 export function EditorPage() {
-  return <></>;
+  return (
+    <>
+      <div></div>
+      <div></div>
+    </>
+  );
 }
