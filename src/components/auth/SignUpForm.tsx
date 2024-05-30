@@ -1,4 +1,4 @@
-import { Input } from "@black-ui/react";
+import { Button, Input } from "@black-ui/react";
 import { ChangeEvent, FormEvent, useState } from "react";
 import { createUser } from "../../apis/user";
 
@@ -42,6 +42,7 @@ const SignUpForm = () => {
         value={newUser.password}
         onChange={handleChange}
       />
+      <Button type="submit">Sign up</Button>
     </form>
   );
 };

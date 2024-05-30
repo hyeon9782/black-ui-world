@@ -12,8 +12,8 @@
 
 import { Route as rootRoute } from './routes/__root'
 import { Route as IndexImport } from './routes/index'
-import { Route as SiginUpIndexImport } from './routes/sigin-up.index'
-import { Route as SiginInIndexImport } from './routes/sigin-in.index'
+import { Route as SignUpIndexImport } from './routes/sign-up.index'
+import { Route as SignInIndexImport } from './routes/sign-in.index'
 import { Route as SettingIndexImport } from './routes/setting.index'
 import { Route as ProfileIndexImport } from './routes/profile.index'
 import { Route as EditorIndexImport } from './routes/editor.index'
@@ -26,13 +26,13 @@ const IndexRoute = IndexImport.update({
   getParentRoute: () => rootRoute,
 } as any)
 
-const SiginUpIndexRoute = SiginUpIndexImport.update({
-  path: '/sigin-up/',
+const SignUpIndexRoute = SignUpIndexImport.update({
+  path: '/sign-up/',
   getParentRoute: () => rootRoute,
 } as any)
 
-const SiginInIndexRoute = SiginInIndexImport.update({
-  path: '/sigin-in/',
+const SignInIndexRoute = SignInIndexImport.update({
+  path: '/sign-in/',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -95,18 +95,18 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SettingIndexImport
       parentRoute: typeof rootRoute
     }
-    '/sigin-in/': {
-      id: '/sigin-in/'
-      path: '/sigin-in'
-      fullPath: '/sigin-in'
-      preLoaderRoute: typeof SiginInIndexImport
+    '/sign-in/': {
+      id: '/sign-in/'
+      path: '/sign-in'
+      fullPath: '/sign-in'
+      preLoaderRoute: typeof SignInIndexImport
       parentRoute: typeof rootRoute
     }
-    '/sigin-up/': {
-      id: '/sigin-up/'
-      path: '/sigin-up'
-      fullPath: '/sigin-up'
-      preLoaderRoute: typeof SiginUpIndexImport
+    '/sign-up/': {
+      id: '/sign-up/'
+      path: '/sign-up'
+      fullPath: '/sign-up'
+      preLoaderRoute: typeof SignUpIndexImport
       parentRoute: typeof rootRoute
     }
   }
@@ -120,8 +120,8 @@ export const routeTree = rootRoute.addChildren({
   EditorIndexRoute,
   ProfileIndexRoute,
   SettingIndexRoute,
-  SiginInIndexRoute,
-  SiginUpIndexRoute,
+  SignInIndexRoute,
+  SignUpIndexRoute,
 })
 
 /* prettier-ignore-end */
@@ -137,8 +137,8 @@ export const routeTree = rootRoute.addChildren({
         "/editor/",
         "/profile/",
         "/setting/",
-        "/sigin-in/",
-        "/sigin-up/"
+        "/sign-in/",
+        "/sign-up/"
       ]
     },
     "/": {
@@ -156,11 +156,11 @@ export const routeTree = rootRoute.addChildren({
     "/setting/": {
       "filePath": "setting.index.tsx"
     },
-    "/sigin-in/": {
-      "filePath": "sigin-in.index.tsx"
+    "/sign-in/": {
+      "filePath": "sign-in.index.tsx"
     },
-    "/sigin-up/": {
-      "filePath": "sigin-up.index.tsx"
+    "/sign-up/": {
+      "filePath": "sign-up.index.tsx"
     }
   }
 }

@@ -1,4 +1,4 @@
-import { Input } from "@black-ui/react";
+import { Button, Input } from "@black-ui/react";
 import { ChangeEvent, FormEvent, useState } from "react";
 import { login } from "../../apis/user";
 
@@ -35,6 +35,7 @@ const LoginForm = () => {
         value={loginUser.password}
         onChange={handleChange}
       />
+      <Button type="submit">Sign in</Button>
     </form>
   );
 };
