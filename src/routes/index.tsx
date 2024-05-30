@@ -3,6 +3,8 @@ import ArticlePreview from "../components/article/ArticlePreview";
 import { useEffect, useState } from "react";
 import { Article } from "../types/articles";
 import { getArticles } from "../apis/articles";
+import ArticleList from "../components/article/ArticleList";
+import ArticleTab from "../components/article/ArticleTab";
 
 export const Route = createFileRoute("/")({
   component: HomePage,
@@ -30,9 +32,8 @@ export function HomePage() {
           padding: "0 10px",
         }}
       >
-        {articles.map((article) => (
-          <ArticlePreview key={article.slug} article={article} />
-        ))}
+        <ArticleTab />
+        <ArticleList />
       </div>
     </>
   );

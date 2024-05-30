@@ -6,7 +6,7 @@ type Props = {
 };
 const ArticlePreview = ({ article }: Props) => {
   return (
-    <Card>
+    <Card style={{ boxSizing: "border-box" }}>
       <div>
         <UserBox profile={article.author} createdAt={article.createdAt} />
         <div>
