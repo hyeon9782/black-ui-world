@@ -1,42 +1,49 @@
 import { Input } from "@black-ui/react";
 import { ChangeEvent, FormEvent, useState } from "react";
-import { login } from "../../apis/user";
+import { createUser } from "../../apis/user";
 
-const LoginForm = () => {
-  const [loginUser, setLoginUser] = useState({
+const SignUpForm = () => {
+  const [newUser, setNewUser] = useState({
+    username: "",
     email: "",
     password: "",
   });
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
-    setLoginUser((prevLoginUser) => ({
-      ...prevLoginUser,
+    setNewUser((prevNewUser) => ({
+      ...prevNewUser,
       [name]: value,
     }));
   };
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const response = await login(loginUser);
+    const response = await createUser(newUser);
     console.log(response);
   };
   return (
     <form onSubmit={handleSubmit}>
       <Input
+        placeholder="Username"
+        name="username"
+        value={newUser.username}
+        onChange={handleChange}
+      />
+      <Input
         placeholder="Email"
         name="email"
-        value={loginUser.email}
+        value={newUser.email}
         onChange={handleChange}
       />
       <Input
         placeholder="Password"
         name="password"
-        value={loginUser.password}
+        value={newUser.password}
         onChange={handleChange}
       />
     </form>
   );
 };
 
-export default LoginForm;
+export default SignUpForm;
