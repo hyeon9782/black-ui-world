@@ -2,14 +2,16 @@ import { Link, createFileRoute } from "@tanstack/react-router";
 import SignUpForm from "../components/auth/SignUpForm";
 
 export const Route = createFileRoute("/sign-up/")({
-  component: SignUpPa,
+  component: SignUpPage,
 });
 
-function SignUpPa() {
+function SignUpPage() {
   return (
     <div>
-      <h1>Sign up</h1>
-      <Link to="/sign-in">Have an account?</Link>
+      <div style={{ marginBottom: "20px", textAlign: "center" }}>
+        <h1>Sign up</h1>
+        <Link to="/sign-in">Have an account?</Link>
+      </div>
       <SignUpForm />
     </div>
   );

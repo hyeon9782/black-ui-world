@@ -3,15 +3,16 @@ import Header from "./Header";
 import "./index.css";
 import Footer from "./Footer";
 import SideBar from "./SideBar";
+import Wrapper from "./Wrapper";
 
 const Layout = () => {
   return (
     <>
       <Header />
       <div style={{ display: "flex" }}>
-        <main>
+        <Wrapper>
           <Outlet />
-        </main>
+        </Wrapper>
         <SideBar></SideBar>
       </div>
       <Footer />

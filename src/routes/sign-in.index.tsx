@@ -8,8 +8,10 @@ export const Route = createFileRoute("/sign-in/")({
 export function LoginPage() {
   return (
     <div>
-      <h1>Sign in</h1>
-      <Link to="/sign-up">Need an account?</Link>
+      <div style={{ marginBottom: "20px", textAlign: "center" }}>
+        <h1>Sign in</h1>
+        <Link to="/sign-up">Need an account?</Link>
+      </div>
       <LoginForm />
     </div>
   );

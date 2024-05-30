@@ -23,26 +23,39 @@ const SignUpForm = () => {
     console.log(response);
   };
   return (
-    <form onSubmit={handleSubmit}>
+    <form
+      onSubmit={handleSubmit}
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        gap: "10px",
+        width: "500px",
+      }}
+    >
       <Input
+        style={{ boxSizing: "border-box" }}
         placeholder="Username"
         name="username"
         value={newUser.username}
         onChange={handleChange}
       />
       <Input
+        style={{ boxSizing: "border-box" }}
         placeholder="Email"
         name="email"
         value={newUser.email}
         onChange={handleChange}
       />
       <Input
+        style={{ boxSizing: "border-box" }}
         placeholder="Password"
         name="password"
         value={newUser.password}
         onChange={handleChange}
       />
-      <Button type="submit">Sign up</Button>
+      <div style={{ display: "flex", justifyContent: "end" }}>
+        <Button type="submit">Sign up</Button>
+      </div>
     </form>
   );
 };
