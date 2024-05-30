@@ -5,7 +5,7 @@ const Wrapper = ({ children }: PropsWithChildren) => {
     <main
       style={{
         margin: "0 auto",
-        width: "1200px",
+        width: "1000px",
         height: "calc(100vh - 60px)",
         display: "flex",
         justifyContent: "center",

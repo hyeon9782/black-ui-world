@@ -18,15 +18,24 @@ const SideBar = () => {
   return (
     <div
       style={{
-        display: "flex",
-        flexWrap: "wrap",
-        width: "200px",
-        height: "300px",
+        position: "fixed",
+        top: "100px",
+        right: "10px",
+        width: "250px",
+        height: "200px",
+        backgroundColor: "lightgray",
+        borderRadius: "5px",
+        padding: "10px",
       }}
     >
-      {tags.map((tag, index) => (
-        <Tag key={index}>{tag}</Tag>
-      ))}
+      <p style={{ fontWeight: "bold" }}>Popula Tags</p>
+      <div style={{ display: "flex", gap: "10px", flexWrap: "wrap" }}>
+        {tags.map((tag, index) => (
+          <Tag key={index} size="sm">
+            {tag}
+          </Tag>
+        ))}
+      </div>
     </div>
   );
 };
