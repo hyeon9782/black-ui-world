@@ -5,6 +5,7 @@ import { Article } from "../types/articles";
 import { getArticles } from "../apis/articles";
 import ArticleList from "../components/article/ArticleList";
 import ArticleTab from "../components/article/ArticleTab";
+import ArticleListSkeleton from "../components/skeleton/ArticleListSkeleton";
 
 export const Route = createFileRoute("/")({
   component: HomePage,
@@ -30,10 +31,12 @@ export function HomePage() {
           flexDirection: "column",
           gap: 10,
           padding: "0 10px",
+          width: "100%",
         }}
       >
         <ArticleTab />
-        <ArticleList />
+        <ArticleListSkeleton />
+        {/* <ArticleList /> */}
       </div>
     </>
   );
