@@ -1,28 +1,14 @@
 import { createFileRoute } from "@tanstack/react-router";
-import ArticlePreview from "../components/article/ArticlePreview";
-import { useEffect, useState } from "react";
-import { Article } from "../types/articles";
-import { getArticles } from "../apis/articles";
 import ArticleList from "../components/article/ArticleList";
 import ArticleTab from "../components/article/ArticleTab";
 import ArticleListSkeleton from "../components/skeleton/ArticleListSkeleton";
+import { Suspense } from "react";
 
 export const Route = createFileRoute("/")({
   component: HomePage,
 });
 
 export function HomePage() {
-  const [articles, setArticles] = useState<Article[]>([]);
-
-  const fetchArticles = async () => {
-    const response = await getArticles();
-    console.log(response.data.articles);
-    setArticles([...response.data.articles]);
-  };
-
-  useEffect(() => {
-    fetchArticles();
-  }, []);
   return (
     <>
       <div
@@ -35,8 +21,9 @@ export function HomePage() {
         }}
       >
         <ArticleTab />
-        <ArticleListSkeleton />
-        {/* <ArticleList /> */}
+        <Suspense fallback={<ArticleListSkeleton />}>
+          <ArticleList />
+        </Suspense>
       </div>
     </>
   );
