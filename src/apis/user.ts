@@ -13,8 +13,8 @@ const getUser = () => {
   return instance.get("/user");
 };
 
-const updateUser = (updateUser: UpdateUser) => {
+const updateUserAPI = (updateUser: UpdateUser) => {
   return instance.put("user", updateUser);
 };
 
-export { login, createUser, getUser, updateUser };
+export { login, createUser, getUser, updateUserAPI };
